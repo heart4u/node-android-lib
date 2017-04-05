@@ -22,6 +22,6 @@ Add it in your root build.gradle at the end of repositories:
 #### Step 2. Add the dependency
 ```
 	dependencies {
-	        compile 'com.github.hyb1996:node-android-lib:1.0.13'
+	        compile 'com.github.hyb1996:node-android-lib:1.0.14'
 	}
 ```

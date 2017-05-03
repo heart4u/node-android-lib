@@ -1,20 +1,16 @@
 apply plugin: 'android-sdk-manager'
 apply plugin: 'com.android.library'
-apply plugin: 'android-native-dependencies'
 
 android {
     compileSdkVersion 21
     buildToolsVersion "21.1.2"
 
-    // prevent ndk from building automagically
     android {
         sourceSets.main {
-            jniLibs.srcDir 'src/main/libs'
             jni.srcDirs = [] //disable automatic ndk-build
         }
 
     }
-
     defaultConfig {
         minSdkVersion 8
         targetSdkVersion 21
@@ -37,7 +33,9 @@ android {
     }
 }
 
+
 dependencies {
+    compile fileTree(include: ['*.jar', '*.so'], dir: 'libs')
     compile 'com.android.support:appcompat-v7:21.0.3'
     compile 'com.faendir.rhino:rhino-android:1.4'
 }
